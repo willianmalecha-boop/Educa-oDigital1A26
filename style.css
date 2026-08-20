@@ -1,12 +1,12 @@
 :root {
-    --cor-primaria: #183C63;
-    --cor-secundaria: #3782d2;
-    --cor-fundo: #f4f8fc;
-    --cor-texto: #151428;
-    --cor-contraste: #ffffff;
-    --cor-botao: #ffffff;
-    --cor-borda: #d6e4f5;
-    --cor-sombra: rgba(24, 60, 99, 0.15);
+    --cor-primaria: #ff00ff;
+    --cor-secundaria: #00eaff;
+    --cor-fundo: #080014;
+    --cor-texto: #ffffff;
+    --cor-contraste: #12001f;
+    --cor-botao: #19002b;
+    --cor-borda: #ff00ff;
+    --cor-sombra: rgba(255, 0, 255, 0.25);
 
     --fonte-texto: 'Segoe UI', sans-serif;
 }
@@ -15,12 +15,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color .4s ease, color .4s ease, transform .3s ease, box-shadow .3s ease;
+    transition: background-color .4s ease, color .4s ease,
+                transform .3s ease, box-shadow .3s ease;
 }
 
 body {
     font-family: var(--fonte-texto);
-    background: var(--cor-fundo);
+    background:
+        radial-gradient(circle at top left, #ff00ff22, transparent 35%),
+        radial-gradient(circle at bottom right, #00eaff22, transparent 35%),
+        var(--cor-fundo);
     color: var(--cor-texto);
     max-width: 100vw;
 }
@@ -30,26 +34,26 @@ body {
 ======================= */
 
 .tema-escuro {
-    --cor-primaria: #55b3ff;
-    --cor-secundaria: #9dd7ff;
-    --cor-fundo: #0b1120;
-    --cor-texto: #f8fafc;
-    --cor-contraste: #16213a;
-    --cor-botao: #16213a;
-    --cor-borda: #24435d;
-    --cor-sombra: rgba(0, 0, 0, .45);
+    --cor-primaria: #ff2cff;
+    --cor-secundaria: #00ffff;
+    --cor-fundo: #05000d;
+    --cor-texto: #ffffff;
+    --cor-contraste: #13001f;
+    --cor-botao: #1c0030;
+    --cor-borda: #00ffff;
+    --cor-sombra: rgba(0, 255, 255, .25);
 }
 
 .tema-escuro article {
-    background: linear-gradient(145deg, #16213a, #0f172a);
+    background: linear-gradient(145deg, #180024, #080014);
 }
 
 .tema-escuro p {
-    color: var(--cor-texto);
+    color: #f5eaff;
 }
 
 .tema-escuro header p {
-    color: #dbeafe;
+    color: #cfffff;
 }
 
 .tema-escuro h2 {
@@ -57,7 +61,7 @@ body {
 }
 
 .tema-escuro .artigo-autor {
-    color: #7dd3fc;
+    color: #ff5cff;
 }
 
 .tema-escuro button {
@@ -66,8 +70,8 @@ body {
 }
 
 .tema-escuro .btn-tema-escuro {
-    background: var(--cor-secundaria);
-    color: #0b1120;
+    background: linear-gradient(135deg, #ff00ff, #00eaff);
+    color: white;
 }
 
 /* =======================
@@ -75,17 +79,23 @@ body {
 ======================= */
 
 header {
-    background: linear-gradient(135deg, #183C63, #3782d2);
+    background: linear-gradient(135deg, #ff00cc, #7200ff, #00eaff);
     color: white;
     text-align: center;
     padding: 35px 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    box-shadow:
+        0 0 15px #ff00ff,
+        0 5px 30px #00eaff55;
 }
 
 header h1 {
     font-size: 2.8rem;
     margin-bottom: 10px;
     letter-spacing: 2px;
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ff00ff,
+        0 0 30px #00eaff;
 }
 
 header p {
@@ -119,12 +129,17 @@ article {
     align-items: center;
     text-align: center;
 
-    box-shadow: 0 10px 25px var(--cor-sombra);
+    box-shadow:
+        0 0 10px var(--cor-borda),
+        0 10px 30px var(--cor-sombra);
 }
 
 article:hover {
     transform: translateY(-8px);
-    box-shadow: 0 18px 35px var(--cor-sombra);
+    border-color: #00ffff;
+    box-shadow:
+        0 0 15px #00ffff,
+        0 0 35px #ff00ff55;
 }
 
 article img {
@@ -133,19 +148,24 @@ article img {
     object-fit: cover;
     border-radius: 15px;
     margin-bottom: 18px;
-    border: 3px solid var(--cor-secundaria);
+    border: 3px solid #00ffff;
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #ff00ff;
 }
 
 h2 {
     color: var(--cor-primaria);
     margin-bottom: 12px;
     font-size: 1.35rem;
+    text-shadow: 0 0 10px var(--cor-primaria);
 }
 
 .artigo-autor {
     font-weight: bold;
     color: var(--cor-secundaria);
     margin-bottom: 12px;
+    text-shadow: 0 0 8px var(--cor-secundaria);
 }
 
 .artigo-fonte {
@@ -165,20 +185,25 @@ article p {
 
 button {
     cursor: pointer;
-    border: none;
+    border: 1px solid #00ffff;
     border-radius: 10px;
     background: var(--cor-botao);
-    color: var(--cor-texto);
+    color: white;
     padding: 10px 18px;
     margin: 10px 6px 0;
     font-size: 1rem;
-    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 0 8px #00ffff55;
 }
 
 button:hover {
     transform: scale(1.08);
-    background: var(--cor-secundaria);
+    background: linear-gradient(90deg, #ff00ff, #7200ff);
     color: white;
+    box-shadow:
+        0 0 10px #ff00ff,
+        0 0 25px #00eaff;
 }
 
 /* =======================
@@ -193,9 +218,14 @@ button:hover {
     height: 65px;
     border-radius: 50%;
     font-size: 30px;
-    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+
+    background: linear-gradient(135deg, #ff00ff, #00eaff);
     color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+
+    box-shadow:
+        0 0 10px #fff,
+        0 0 25px #ff00ff,
+        0 0 35px #00eaff;
 }
 
 .btn-tema-escuro:hover {
@@ -207,7 +237,6 @@ button:hover {
 ======================= */
 
 @media (max-width: 768px) {
-
     header h1 {
         font-size: 2rem;
     }
